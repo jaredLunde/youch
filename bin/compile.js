@@ -84,7 +84,7 @@ function bundleCssFiles () {
   const css = await bundleCssFiles()
   templateSource = templateSource.replace(/\[\[__js__\]\]/, () => js)
   templateSource = templateSource.replace(/\[\[__css__\]\]/, css)
-  fs.writeFileSync(path.join(OUTPUT, 'error.compiled.mustache'), templateSource)
+  fs.writeFileSync(path.join(OUTPUT, 'error.compiled.html'), templateSource)
 })().then(() => {
   console.log('Bundle created')
   process.exit(0)

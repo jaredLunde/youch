@@ -14,10 +14,8 @@ const path = require('path')
 const stackTrace = require('stack-trace')
 const fs = require('fs')
 const cookie = require('cookie')
-const VIEW_PATH = './error.compiled.mustache'
 const startingSlashRegex = /\\|\//
-
-const viewTemplate = fs.readFileSync(path.join(__dirname, VIEW_PATH), 'utf-8')
+const viewTemplate = require('./error.compiled.html')
 
 class Youch {
   constructor (error, request) {
